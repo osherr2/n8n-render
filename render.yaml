@@ -2,10 +2,15 @@ services:
   - type: web
     name: n8n
     env: docker
+    image: n8nio/n8n
     plan: free
     region: oregon
     envVars:
+      - key: N8N_BASIC_AUTH_ACTIVE
+        value: "true"
       - key: N8N_BASIC_AUTH_USER
-        value: admin
+        value: "admin"
       - key: N8N_BASIC_AUTH_PASSWORD
-        value: admin123
+        value: "admin123"
+      - key: GENERIC_TIMEZONE
+        value: "America/Costa_Rica"
